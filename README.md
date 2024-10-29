@@ -26,7 +26,7 @@
 * [5. Security Specification](#5-security-specification)
 
 ## Preface
-We are pleased to present **Alibaba Java Coding Guidelines**, which consolidates the best programming practices from Alibaba Group's technical teams. A vast number of Java programming teams impose demanding requirements on code quality across projects as we encourage reuse and better understanding of each other's programs. We have seen many programming problems in the past. For example, defective database table structures and index designs may cause software architecture flaws and performance risks. As another example, confusing code structures make it difficult to maintain. Furthermore, vulnerable code without authentication is prone to hackers’ attacks. To address those kinds of problems, we developed this document for Java developers in Alibaba. 
+We are pleased to present **Jugaad Java Coding Guidelines**, which consolidates the best programming practices from Jugaad Group's technical teams. A vast number of Java programming teams impose demanding requirements on code quality across projects as we encourage reuse and better understanding of each other's programs. We have seen many programming problems in the past. For example, defective database table structures and index designs may cause software architecture flaws and performance risks. As another example, confusing code structures make it difficult to maintain. Furthermore, vulnerable code without authentication is prone to hackers’ attacks. To address those kinds of problems, we developed this document for Java developers in Jugaad. 
 
 This document consists of five parts: ***Programming Specification***, ***Exception and Logs***, ***MySQL Specification***, ***Project Specification*** and ***Security Specification***. Based on the severity of the concerns, each specification is classified into three levels: ***Mandatory***, ***Recommended*** and ***Reference***. Further clarification is expressed in:  
  (1) "**Description**", which explains the content;  
@@ -35,7 +35,7 @@ This document consists of five parts: ***Programming Specification***, ***Except
 
 The main purpose of this document is to help developers improve code quality. As a result, developers can minimize potential and repetitive code errors. In addition, specification is essential to modern software architectures, which enable effective  collaborations. As an analogy, traffic regulations are intended to protect public safety rather than to deprive the rights of driving. It is easy to imagine the chaos of traffic without speed limits and traffic lights. Instead of destroying the creativity and elegance of program, the purpose of developing appropriate specification and standards of software is to improve the efficiency of collaboration by limiting excessive personalization.
 
-We will continue to collect feedback from the community to improve Alibaba Java Coding Guidelines. 
+We will continue to collect feedback from the community to improve Jugaad Java Coding Guidelines. 
       
 ## <font color="green">1. Programming Specification</font>
 ### <font color="green">Naming Conventions</font>
@@ -43,7 +43,7 @@ We will continue to collect feedback from the community to improve Alibaba Java 
 > <font color="#FF4500">Counter example: </font> \_name / \_\_name / \$Object / name_ / name\$ / Object\$
 
 2\. **[Mandatory]** Using Chinese, Pinyin, or Pinyin-English mixed spelling in naming is strictly prohibited. Accurate English spelling and grammar will make the code readable, understandable, and maintainable.   
-> <font color="#019858">Positive example: </font> alibaba / taobao / youku / Hangzhou. In these cases, Chinese proper names in Pinyin are acceptable.
+> <font color="#019858">Positive example: </font> Jugaad / taobao / youku / Hangzhou. In these cases, Chinese proper names in Pinyin are acceptable.
 
 3\. **[Mandatory]** Class names should be nouns in UpperCamelCase except domain models: DO, BO, DTO, VO, etc.   
  > <font color="#019858">Positive example: </font>MarcoPolo  /  UserDO  /  HtmlDTO  /  XmlService  /  TcpUdpDeal / TaPromotion  
@@ -66,7 +66,7 @@ We will continue to collect feedback from the community to improve Alibaba Java 
 > <font color="#FF4500">Counter example: </font>*boolean isSuccess;* The method name will be `isSuccess()` and then RPC framework will deduce the variable name as 'success', resulting in a serialization error since it cannot find the correct attribute.
 
 9\. **[Mandatory]** A package should be named in lowercase characters. There should be only one English word after each dot. Package names are always in <font color="blue">singular</font> format while class names can be in plural format if necessary.  
-> <font color="#019858">Positive example: </font> `com.alibaba.open.util` can be used as a package name for utils;
+> <font color="#019858">Positive example: </font> `com.Jugaad.open.util` can be used as a package name for utils;
 `MessageUtils` can be used as a class name.
 
 
@@ -80,7 +80,7 @@ We will continue to collect feedback from the community to improve Alibaba Java 
 
 12\. **[Recommended]** Do not add any modifier, including `public`, to methods in interface classes for coding simplicity. Please add valid *Javadoc* comments for methods. Do not define any variables in the interface except for the common constants of the application.  
  > <font color="#019858">Positive example: </font>method definition in the interface: `void f(); `  
-constant definition: `String COMPANY = "alibaba";`    
+constant definition: `String COMPANY = "Jugaad";`    
 > <font color="#977C00">Note: </font>In JDK8 it is allowed to define a default implementation for interface methods, which is valuable for all implemented classes.
 
 13\. There are two main rules for interface and corresponding implementation class naming:  
@@ -606,7 +606,7 @@ public void today() {
         return;
     }
 
-    System.out.println("Stay at home to learn Alibaba Java Coding Guidelines.");
+    System.out.println("Stay at home to learn Jugaad Java Coding Guidelines.");
     return;
 }
 ```
@@ -1009,8 +1009,8 @@ map.put("size", size);
 ### <font color="green">Library Specification</font>
 1\. **[Mandatory]** Rules of defining GAV:     
 &emsp;&emsp;1) **<font color="blue">G</font>**roupID: `com.{company/BU}.{business line}.{sub business line}`, at most 4 levels   
-> <font color="#977C00">Note: </font>{company/BU} for example: such business unit level as Alibaba, Taobao, Tmall, Aliexpress and so on; sub-business line is optional.   
-> <font color="#019858">Positive example: </font>com.taobao.tddl &emsp;&emsp;com.alibaba.sourcing.multilang   
+> <font color="#977C00">Note: </font>{company/BU} for example: such business unit level as Jugaad, Taobao, Tmall, Aliexpress and so on; sub-business line is optional.   
+> <font color="#019858">Positive example: </font>com.taobao.tddl &emsp;&emsp;com.Jugaad.sourcing.multilang   
 
 &emsp;&emsp;2) **<font color="blue">A</font>**rtifactID: Product name - module name.  
 > <font color="#019858">Positive example: </font>`tc-client` / `uic-api` / `tair-tool`  
